@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    int arr[n];
+    int current_sum = 0;
+    printf("Enter %d elements (between 0 and %d, with one missing):\n", n, n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        current_sum += arr[i]; 
+    }
+    int expected_sum = (n * (n + 1)) / 2;
+    int missing_number = expected_sum - current_sum;
+    printf("The missing number is: %d\n", missing_number);
+    return 0;
+}
